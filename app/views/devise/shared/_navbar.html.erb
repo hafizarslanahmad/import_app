@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Home", root_path , class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "organization",  new_organization_path, class: "nav-link active" %>
+        </li>
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">User</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><%= link_to "organization", new_organization_path %></li>
+              <li><%= link_to "User", new_user_path %></li>
+              <li><%= link_to "Program", new_program_path %></li>
+              <li><hr class="dropdown-divider"></li>
+              
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <% if registration_signed_in? %>
+            <li class="nav-item">
+              <%= button_to "Logout", destroy_registration_session_path, method: :delete, class: "nav-link" %>
+            </li>
+           <% else %>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_registration_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+               <%= link_to "Login", registration_session_path, class: "nav-link"%>
+            </li>
+            
+             
+           <% end %>
+      </ul>
+
+    </div>
+  </div>
+</nav>

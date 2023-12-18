@@ -1,0 +1,23 @@
+<h2> Program Form</h2>
+
+
+<%= simple_form_for @program do |f| %>
+<div class="card-body">
+    <div class= " mt-4">
+    <%= f.input :title %>
+    </div> 
+        <div class= "mt-4">
+         <%= f.label :Description %>
+         <%= f.rich_text_area  :description %>
+          </div> 
+           <div class= "mt-4">
+            <%= f.input :course_code %>
+            </div>
+          <div class= "mt-4">
+        <%= f.select :category, Program.categories.keys %>
+    </div> 
+    <div class= "mt-4">
+     <%= f.submit "save", class: "btn btn-primary" %>
+    </div>
+</div>  
+<% end %>

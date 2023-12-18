@@ -1,0 +1,32 @@
+<h2> User Form </h2>
+
+<%= simple_form_for @user do |f| %>
+<%= f.hidden_field :registration_id, value:   current_registration.id %>
+<div class="card-body">
+    <div class= " mt-4">
+    <%= f.input :first_name %>
+    </div> 
+        <div class= "mt-4">
+         <%= f.input :last_name %>
+          </div> 
+           <div class= "mt-4">
+            <%= f.input :email %>
+            </div>
+          <div class= "mt-4">
+        <%= f.select :category, User.categories.keys %>
+    </div>
+      <div class= "mt-4">
+            <%= f.label :Avatar %><br>
+            <%= f.file_field :avatar %>
+            </div> 
+    <div class= "mt-4">
+     <%= f.submit "save", class: "btn btn-primary" %>
+    </div>
+</div>  
+
+  <%= simple_form_for :organization do |f| %>
+    <%= f.select :organization_id, Organization.all.map {|n| [n.name, n.id]} %>
+    <%= f.submit %>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,16 @@
+<div class= "col-lg-10">
+ <div class= "card rounded-0 shadow mt-5 mb-5">
+  <div class="card-body">
+   <%= image_tag @user.avatar, style: "width: 200px; height:300px;" %>
+    <p><%= notice %></p>
+     <h2> Show Users </h2>
+      <p><strong>First_name:</strong> <%= @user.first_name%></p>
+       <br>
+      <p><strong>Last_name:</strong> <%= @user.last_name%></p>
+       <br>
+      <p><strong>Email:</strong> <%= @user.email%></p>
+      <br>
+      <p><strong>Category:</strong> <%= @user.category%></p>
+  </div>
+ </div>
+</div>
